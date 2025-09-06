@@ -37,8 +37,25 @@
     .coming-soon p {
       font-size: 1.3rem;
       color: #a5d6a7;
-      margin: 0;
+      margin: 0 0 24px 0;
       text-shadow: 0 2px 8px #222;
+    }
+    .home-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 28px;
+      background: linear-gradient(90deg, #25D366 0%, #ffeb3b 100%);
+      color: #222;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      transition: background 0.3s;
+    }
+    .home-btn:hover {
+      background: linear-gradient(90deg, #ffeb3b 0%, #25D366 100%);
+      color: #111;
     }
     @keyframes popIn {
       0% { transform: scale(0.7); opacity: 0; }
@@ -65,6 +82,7 @@
   <div class="coming-soon">
     <h1>🚧 Yakında!</h1>
     <p>Bu sayfa çok yakında <b>havalı</b> bir şekilde hazırlanıyor. Takipte kalın! ✨</p>
+    <a href="index.html" class="home-btn">Anasayfa</a>
   </div>
   <!-- Call Us Button -->
   <a href="tel:+905321399161" class="call-button">Bizi Ara</a>

@@ -12,8 +12,52 @@
       min-height: 100vh;
       margin: 0;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+    }
+    .navbar {
+      width: 100%;
+      padding: 16px 32px;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffeb3b;
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 8px;
+    }
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 24px;
+    }
+    .menu li {
+      position: relative;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      padding: 8px 16px;
+      transition: color 0.3s;
+    }
+    .menu a:hover {
+      color: #25D366;
     }
     .coming-soon {
       background: rgba(0,0,0,0.7);
@@ -23,7 +67,7 @@
       text-align: center;
       color: #fff;
       max-width: 420px;
-      margin: 40px auto;
+      margin: 100px auto 40px auto;
       font-family: 'Montserrat', Arial, sans-serif;
       animation: popIn 1.2s cubic-bezier(.4,0,.2,1);
     }
@@ -37,8 +81,25 @@
     .coming-soon p {
       font-size: 1.3rem;
       color: #a5d6a7;
-      margin: 0;
+      margin: 0 0 24px 0;
       text-shadow: 0 2px 8px #222;
+    }
+    .home-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 28px;
+      background: linear-gradient(90deg, #25D366 0%, #ffeb3b 100%);
+      color: #222;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      transition: background 0.3s;
+    }
+    .home-btn:hover {
+      background: linear-gradient(90deg, #ffeb3b 0%, #25D366 100%);
+      color: #111;
     }
     @keyframes popIn {
       0% { transform: scale(0.7); opacity: 0; }
@@ -47,9 +108,24 @@
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Flamingoköy Logo">
+      Flamingoköy
+    </div>
+    <ul class="menu">
+      <li><a href="index.html">Anasayfa</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="kahvalti.html">Kahvaltı</a></li>
+      <li><a href="barbeku.html">Barbekü</a></li>
+      <li><a href="dostlarimiz.html">Dostlarımız</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+  </nav>
   <div class="coming-soon">
     <h1>🚧 Yakında!</h1>
     <p>Bu sayfa çok yakında <b>havalı</b> bir şekilde hazırlanıyor. Takipte kalın! ✨</p>
+    <a href="index.html" class="home-btn">Anasayfa</a>
   </div>
 </body>
 </html>
