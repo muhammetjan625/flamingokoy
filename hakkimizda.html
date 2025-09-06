@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hakkımızda - Flamingoköy</title>
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+  <div class="overlay"></div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="Flamingoköy Logo"> Flamingoköy
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">Anasayfa</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="kahvalti.html">Kahvaltı</a></li>
+        <li><a href="barbeku.html">Barbekü</a></li>
+        <li><a href="dostlarimiz.html">Dostlarımız</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="about parallax-bg">
+    <h2 class="fade-in">Hakkımızda</h2>
+    <p class="fade-in">Flamingoköy, şehir hayatının stresinden uzaklaşmak isteyenler için kuruldu. Doğayla iç içe, huzurlu ve keyifli bir ortam sunuyoruz.</p>
+    <div class="about-icons fade-in">
+      <div class="icon-item">🌳<span>Doğa</span></div>
+      <div class="icon-item">🐦<span>Hayvanlar</span></div>
+      <div class="icon-item">🍳<span>Kahvaltı</span></div>
+      <div class="icon-item">🔥<span>Barbekü</span></div>
+    </div>
+    <div class="mini-gallery fade-in">
+      <img src="images/hero1.jpg" class="lightbox-img" alt="Galeri 1">
+      <img src="images/hero2.jpg" class="lightbox-img" alt="Galeri 2">
+      <img src="images/hero1.jpg" class="lightbox-img" alt="Galeri 3">
+    </div>
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img">
+    </div>
+  </section>
+  <section class="about-video fade-in">
+    <video controls width="100%" src="videos/tanitim.mp4"></video>
+  </section>
+  <!-- Call Us Button -->
+  <a href="tel:+905321399161" class="call-button">Bizi Ara</a>
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/905523776161" class="whatsapp-button" target="_blank">WhatsApp'a Yaz</a>
+  <script>
+    // Animasyonlu scroll efektleri
+    const faders = document.querySelectorAll('.fade-in');
+    window.addEventListener('scroll', () => {
+      faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100) el.classList.add('active');
+      });
+    });
+    // Lightbox
+    const images = document.querySelectorAll('.lightbox-img');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const close = document.querySelector('.close');
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lbImg.src = img.src;
+      });
+    });
+    close.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

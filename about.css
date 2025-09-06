@@ -1,0 +1,213 @@
+/* Temel ayarlar */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  line-height: 1.7;
+  color: #fff;
+  background: url("images/hero1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  padding-top: 70px; /* navbar boşluğu */
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menu { list-style:none; display:flex; gap:20px; }
+.menu a { text-decoration:none; color:#fff; font-weight:500; transition:0.3s; }
+.menu a:hover, .menu a.active { color: #a5d6a7; }
+
+/* Hakkımızda bölümü */
+.about {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  padding: 80px 20px;
+}
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #a5d6a7;
+}
+.about p {
+  font-size: 18px;
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+/* About Icons */
+.about-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 32px;
+}
+.icon-item span {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Mini Galeri */
+.mini-gallery {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.mini-gallery img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+/* Call & WhatsApp Buttons */
+.call-button {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: #007BFF;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+.call-button:hover { background: #0056b3; }
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+.whatsapp-button:hover { background: #1ebe57; }
+
+/* Animasyonlu scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(.4,0,.2,1);
+}
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* İkon hover efekti */
+.icon-item:hover {
+  transform: scale(1.2);
+  color: #25D366;
+  transition: 0.3s;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 2100;
+}
+
+/* Zaman çizelgesi (Timeline) */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  background: rgba(255,255,255,0.08);
+  padding: 32px 24px;
+  border-radius: 16px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+.timeline-item {
+  background: rgba(255,255,255,0.13);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Video bölümü */
+.about-video {
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+/* Paralaks arka plan */
+.parallax-bg {
+  background: url('images/hero2.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .menu { flex-direction: column; gap: 10px; }
+  .about-icons { gap: 15px; }
+  .mini-gallery { flex-wrap: wrap; justify-content: center; }
+  .timeline, .about-video, .parallax-bg { padding: 16px 6px; }
+  .mini-gallery img { width: 100px; height: 100px; }
+}
