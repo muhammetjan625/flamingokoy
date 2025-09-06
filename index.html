@@ -5,9 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flamingoköy</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: url('images/hero1.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    header, section, footer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-content, .about, .kahvalti, .barbeku, .dostlarimiz, .info-grid, .testimonials {
+      text-align: center;
+    }
+    .mini-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+    .mini-gallery img {
+      border-radius: 12px;
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+    }
+    .testimonial-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 24px;
+    }
+    .testimonial-card {
+      min-width: 180px;
+      max-width: 220px;
+    }
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+    }
+    .info-item {
+      flex: 1 1 320px;
+      max-width: 400px;
+    }
+    .call-button, .whatsapp-button {
+      position: fixed;
+      right: 32px;
+      bottom: 80px;
+      z-index: 10;
+    }
+    .call-button {
+      bottom: 140px;
+    }
+    #scrollTopBtn {
+      position: fixed;
+      right: 32px;
+      bottom: 32px;
+      z-index: 10;
+    }
+  </style>
 </head>
 <body>
-  <div class="overlay"></div>
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -29,7 +96,7 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Doğanın Kalbinde Bir Yaşam Alanı</h1>
-      <p>Flamingoköy, doğanın içinde huzur bulabileceğiniz, sevdiklerinizle keyifli zaman geçirebileceğiniz eşsiz bir mekân.</p>
+      <p>Flamingoköy, doğanın içinde huzur bulabileceğiniz, sevdiklerinizle keyifli zaman geçirebileceğiniz eşsiz bir mekân. Şehrin gürültüsünden uzak, kuş sesleri ve yemyeşil doğa eşliğinde güne başlayabilir, aileniz ve dostlarınızla unutulmaz anılar biriktirebilirsiniz. Geniş doğal alanlarımızda özgürce dolaşabilir, çocuklarınız güvenle oynarken siz de doğanın tadını çıkarabilirsiniz. Flamingoköy’de her mevsim ayrı bir güzellik, her köşede yeni bir keşif sizi bekliyor. Doğayla iç içe, huzurlu ve samimi bir ortamda gerçek bir köy deneyimi yaşayın.</p>
     </div>
   </section>
 
@@ -97,7 +164,7 @@
     <div class="info-item">
       <section class="mini-map">
         <h2>Konumumuz</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.4924781169643!2d28.4457947!3d41.189235599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b545620d8c5919%3A0xba2ebe6cf1230359!2sFlamingo%20K%C3%B6y!5e0!3m2!1str!2str!4v1757194629769!5m2!1str!2str" width="100%" height="180" style="border:0; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.15);" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.4924781169643!2d28.4457947!3d41.189235599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b545620d8c5919%3A0xba2ebe6cf1230359!2sFlamingo%20K%C3%B6y!5e0!3m2!1str!2str!4v1757194629769!5m2!1str!2str" width="100%" height="180" style="border:0; border-radius:12px; box-shadow:0 2px 8px rgba(62, 139, 39, 0.15);" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </section>
     </div>
   </section>
