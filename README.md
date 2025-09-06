@@ -32,21 +32,6 @@ script.js
 images/
 ```
 
-## Kurulum
-
-1. Depoyu klonlayın:
-
-   ```bash
-   git clone https://github.com/muhammetjan625/flamingokoy.git
-   ```
-
-2. Klasöre girin:
-
-   ```bash
-   cd flamingokoy
-   ```
-
-3. `index.html` dosyasını tarayıcıda açın.
 
 ## Katkı
 
