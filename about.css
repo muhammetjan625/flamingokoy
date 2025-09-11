@@ -310,20 +310,51 @@ body {
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 20px;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+    gap: 5px;
+  }
+
+  .logo img {
+    width: 30px;
+    height: 30px;
   }
 
   .menu {
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    text-align: center;
   }
 
   .menu a {
-    padding: 10px;
-    width: 100%;
-    text-align: left;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-header p {
+    font-size: 1.2rem;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .gallery-images img {
+    max-width: 100%;
+    height: auto;
   }
 }
 

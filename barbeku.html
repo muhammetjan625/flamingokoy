@@ -62,23 +62,77 @@
       0% { transform: scale(0.7); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+    }
+    .navbar .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffeb3b;
+      display: flex;
+      align-items: center;
+    }
+    .navbar .logo img {
+      height: 40px;
+      margin-right: 8px;
+    }
+    .navbar .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+    .navbar .menu li {
+      margin: 0 16px;
+    }
+    .navbar .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+    }
+    .navbar .menu a.active {
+      color: #25D366;
+    }
+    .navbar .menu a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: #25D366;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .navbar .menu a:hover::after {
+      transform: scaleX(1);
+    }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="images/logoflamingokoyb.png" alt="Flamingoköy Logo"> Flamingoköy
-      </div>
-      <ul class="menu">
-        <li><a href="index.html">Anasayfa</a></li>
-        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-        <li><a href="kahvalti.html">Kahvaltı</a></li>
-        <li><a href="barbeku.html">Barbekü</a></li>
-        <li><a href="dostlarimiz.html">Dostlarımız</a></li>
-        <li><a href="iletisim.html">İletişim</a></li>
-      </ul>
-    </nav>
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logoflamingokoyb.png" alt="Flamingoköy Logo">
+      Flamingoköy
+    </div>
+    <ul class="menu">
+      <li><a href="index.html">Anasayfa</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="kahvalti.html">Kahvaltı</a></li>
+      <li><a href="barbeku.html" class="active">Barbekü</a></li>
+      <li><a href="dostlarimiz.html">Dostlarımız</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
   </header>
   <div class="coming-soon">
     <h1>🚧 Yakında!</h1>

@@ -6,110 +6,10 @@
   <title>İletişim - Flamingoköy</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="iletisim.css">
-  <style>
-    body {
-      background: url('images/hero2.jpg') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-    }
-    .navbar {
-      width: 100%;
-      padding: 16px 32px;
-      background: rgba(0, 0, 0, 0.8);
-      position: fixed;
-      top: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      z-index: 1000;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #ffeb3b;
-      display: flex;
-      align-items: center;
-    }
-    .logo img {
-      height: 40px;
-      margin-right: 8px;
-    }
-    .menu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 24px;
-    }
-    .menu li {
-      position: relative;
-    }
-    .menu a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 1rem;
-      padding: 8px 16px;
-      transition: color 0.3s;
-    }
-    .menu a:hover {
-      color: #25D366;
-    }
-    .coming-soon {
-      background: rgba(0,0,0,0.7);
-      border-radius: 24px;
-      box-shadow: 0 8px 32px rgba(37,211,102,0.18);
-      padding: 48px 32px;
-      text-align: center;
-      color: #fff;
-      max-width: 420px;
-      margin: 100px auto 40px auto;
-      font-family: 'Montserrat', Arial, sans-serif;
-      animation: popIn 1.2s cubic-bezier(.4,0,.2,1);
-    }
-    .coming-soon h1 {
-      font-size: 2.5rem;
-      margin-bottom: 18px;
-      letter-spacing: 2px;
-      color: #ffeb3b;
-      text-shadow: 0 2px 16px #25D366;
-    }
-    .coming-soon p {
-      font-size: 1.3rem;
-      color: #a5d6a7;
-      margin: 0 0 24px 0;
-      text-shadow: 0 2px 8px #222;
-    }
-    .home-btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 28px;
-      background: linear-gradient(90deg, #25D366 0%, #ffeb3b 100%);
-      color: #222;
-      font-weight: bold;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-      transition: background 0.3s;
-    }
-    .home-btn:hover {
-      background: linear-gradient(90deg, #ffeb3b 0%, #25D366 100%);
-      color: #111;
-    }
-    @keyframes popIn {
-      0% { transform: scale(0.7); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-  </style>
 </head>
 <body>
-  <nav class="navbar">
+  <!-- Navbar -->
+  <header class="navbar">
     <div class="logo">
       <img src="images/logoflamingokoyb.png" alt="Flamingoköy Logo">
       Flamingoköy
@@ -120,13 +20,94 @@
       <li><a href="kahvalti.html">Kahvaltı</a></li>
       <li><a href="barbeku.html">Barbekü</a></li>
       <li><a href="dostlarimiz.html">Dostlarımız</a></li>
-      <li><a href="iletisim.html">İletişim</a></li>
+      <li><a href="iletisim.html" class="active">İletişim</a></li>
     </ul>
-  </nav>
-  <div class="coming-soon">
-    <h1>🚧 Yakında!</h1>
-    <p>Bu sayfa çok yakında <b>havalı</b> bir şekilde hazırlanıyor. Takipte kalın! ✨</p>
-    <a href="index.html" class="home-btn">Anasayfa</a>
-  </div>
+  </header>
+
+  <main class="iletisim-container">
+    <!-- İletişim Kartları -->
+    <div class="iletisim-card">
+      <h3 class="iletisim-title">Telefon</h3>
+      <p>📞 <a href="tel:+905321399161">+90 532 139 91 61</a></p>
+    </div>
+
+    <div class="iletisim-card">
+      <h3 class="iletisim-title">WhatsApp</h3>
+      <p>💬 <a href="https://wa.me/905523776161" target="_blank">Hemen Yaz</a></p>
+    </div>
+
+    <div class="iletisim-card">
+      <h3 class="iletisim-title">E-Posta</h3>
+      <p>📧 <a href="mailto:info@flamingokoy.com">info@flamingokoy.com</a></p>
+    </div>
+
+    <div class="iletisim-card">
+      <h3 class="iletisim-title">Adres</h3>
+      <p>📍 Flamingoköy, Çatalca / İstanbul</p>
+    </div>
+
+    <!-- Sosyal Medya -->
+    <div class="sosyal-medya">
+      <a href="tel:+905321399161" target="_blank" class="call">📞</a>
+      <a href="https://wa.me/905523776161" target="_blank" class="whatsapp">💬</a>
+      <a href="https://instagram.com/flamingokoy" target="_blank" class="ig">📸</a>
+    </div>
+
+    <!-- İletişim Formu -->
+    <section class="iletisim-form">
+      <h2>Bize Ulaşın</h2>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+        <input type="email" name="email" placeholder="E-Posta Adresiniz" required>
+        <textarea name="message" placeholder="Mesajınız..." required></textarea>
+        <button type="submit">Gönder</button>
+      </form>
+    </section>
+
+    <!-- Instagram -->
+    <section class="instagram-feed">
+      <h2>Bizi Instagram'da Takip Edin</h2>
+      <blockquote class="instagram-media" 
+        data-instgrm-permalink="https://www.instagram.com/flamingokoy/" 
+        data-instgrm-version="14">
+        <a href="https://www.instagram.com/flamingokoy/">Instagram gönderisini görüntüle</a>
+      </blockquote>
+      <script async src="//www.instagram.com/embed.js"></script>
+    </section>
+
+    <!-- Google Maps -->
+    <section class="mini-map">
+      <h2>Konumumuz</h2>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.4924781169643!2d28.4457947!3d41.189235599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b545620d8c5919%3A0xba2ebe6cf1230359!2sFlamingo%20K%C3%B6y!5e0!3m2!1str!2str!4v1757194629769!5m2!1str!2str" 
+        allowfullscreen 
+        loading="lazy">
+      </iframe>
+    </section>
+
+    <!-- Sık Sorulan Sorular (FAQ) -->
+    <section class="faq">
+      <h2>Sık Sorulan Sorular</h2>
+      <ul>
+        <li><strong>Kahvaltı saat kaçta başlıyor?</strong> Kahvaltımız sabah 09:30'da başlıyor.</li>
+        <li><strong>Rezervasyon gerekiyor mu?</strong> Hayır, rezervasyona gerek yok. Geniş bir alanımız var.</li>
+        <li><strong>Evcil hayvan kabul ediliyor mu?</strong> Evet, evcil hayvanlarınızı getirebilirsiniz.</li>
+        <li><strong>Çocuklar için oyun alanı var mı?</strong> Evet, çocuklar için özel bir oyun alanımız bulunmaktadır.</li>
+        <li><strong>Menüde vejetaryen seçenekler var mı?</strong> Evet, menümüzde vejetaryen seçenekler mevcuttur.</li>
+        <li><strong>Hangi ödeme yöntemlerini kabul ediyorsunuz?</strong> Nakit, kredi kartı ve temassız ödeme kabul ediyoruz.</li>
+        <li><strong>Wi-Fi hizmeti sunuyor musunuz?</strong> Evet, ücretsiz Wi-Fi hizmetimiz bulunmaktadır.</li>
+      </ul>
+    </section>
+
+    <!-- QR Kod ile Hızlı Erişim -->
+    <section class="qr-code">
+      <h2>Hızlı Erişim</h2>
+      <p>Telefon numaramıza veya Instagram hesabımıza hızlıca ulaşmak için QR kodu tarayın:</p>
+      <img src="images/qr-code.png" alt="QR Kod" class="qr-image">
+    </section>
+
+    <!-- WhatsApp Butonu -->
+    <a href="https://wa.me/905523776161" class="whatsapp-button" target="_blank">💬</a>
+  </main>
 </body>
 </html>
