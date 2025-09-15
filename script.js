@@ -32,6 +32,29 @@
       });
     }
 
+    /* ---------------- Logo'ya tıklanınca küçük menü açılması ---------------- */
+    const smallMenu = document.createElement('div');
+    smallMenu.classList.add('small-menu');
+    smallMenu.innerHTML = `
+      <ul>
+        <li><a href="#">Menü 1</a></li>
+        <li><a href="#">Menü 2</a></li>
+        <li><a href="#">Menü 3</a></li>
+      </ul>
+    `;
+    document.body.appendChild(smallMenu);
+
+    if (logo) {
+      logo.addEventListener('click', (e) => {
+        e.stopPropagation();
+        smallMenu.classList.toggle('visible');
+      });
+
+      document.addEventListener('click', () => {
+        smallMenu.classList.remove('visible');
+      });
+    }
+
     /* ---------------- Topbar saat kontrolü ---------------- */
     const topbar = document.querySelector('.topbar');
     if (topbar) {
@@ -138,9 +161,126 @@
     // ilk yüklemede bir kez çalıştır
     revealOnScroll();
 
+    /* ---------------- Sayfa kaydırıldığında logo davranışı ---------------- */
+    const logoElement = document.querySelector('.logo');
+    let lastScrollTop = 0;
+
+    if (logoElement) {
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+
+        if (currentScroll > lastScrollTop) {
+          // Aşağı kaydırılıyor
+          logoElement.classList.add('small');
+          logoElement.classList.remove('large', 'medium');
+        } else {
+          // Yukarı kaydırılıyor
+          logoElement.classList.add('large');
+          logoElement.classList.remove('small', 'medium');
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Negatif scroll değerlerini sıfırla
+      });
+    }
+
+    /* ---------------- Mobil Menü ve Logo Tıklanabilirlik ---------------- */
+    const menuButton = document.querySelector('.btn-open');
+    const navigationMenu = document.querySelector('.main-navigation');
+    const logoElement2 = document.querySelector('.header-logo a');
+
+    if (menuButton && navigationMenu) {
+      menuButton.addEventListener('click', () => {
+        navigationMenu.classList.toggle('active');
+      });
+    }
+
+    if (logoElement2) {
+      logoElement2.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Logo tıklandı!'); // Burada istediğiniz işlemi yapabilirsiniz.
+      });
+    }
+
+    /* ---------------- Navbar Logo Ortalama ---------------- */
+    const headerLogo = document.querySelector('.header-logo');
+    if (headerLogo && navigationMenu) {
+      // Logoyu ortalamak için gerekli işlemler
+      headerLogo.style.textAlign = 'center';
+      navigationMenu.style.display = 'flex';
+      navigationMenu.style.justifyContent = 'space-between';
+    }
+
     /* ---------------- Küçük güvenlik kontrolleri ---------------- */
     // Eğer bazı elementler beklenmedik şekilde eksikse, hata fırlatmayı önle
     // (tüm addEventListener çağrıları yukarıda koşullarla sarmalandı)
+
+    /* ------------------- Hamburger Menü ------------------- */
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mainNavigation = document.querySelector('.main-navigation');
+
+    if (hamburgerMenu && mainNavigation) {
+      hamburgerMenu.addEventListener('click', () => {
+        mainNavigation.classList.toggle('active');
+      });
+    }
+
+    function attachNavbarHandlers() {
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      const mainNavigation = document.querySelector('.main-navigation');
+      const menuMobile = document.querySelector('.menu-mobile');
+      if (hamburgerMenu && mainNavigation) {
+        hamburgerMenu.addEventListener('click', () => {
+          mainNavigation.classList.toggle('active');
+          if (menuMobile) menuMobile.classList.toggle('active');
+        });
+        // close mobile nav when clicking a link
+        mainNavigation.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', () => {
+            mainNavigation.classList.remove('active');
+            if (menuMobile) menuMobile.classList.remove('active');
+          });
+        });
+      }
+
+      if (menuMobile) {
+        menuMobile.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', () => {
+            menuMobile.classList.remove('active');
+            if (mainNavigation) mainNavigation.classList.remove('active');
+          });
+        });
+      }
+
+      // Set active menu link based on current path
+      function setActiveNavLinks() {
+        try {
+          const path = window.location.pathname.split('/').pop() || 'index.html';
+          const anchors = document.querySelectorAll('.main-navigation a, .menu-mobile a');
+          anchors.forEach(a => {
+            const href = a.getAttribute('href');
+            if (!href) return;
+            const hrefFile = href.split('/').pop();
+            if (hrefFile === path || (path === '' && hrefFile === 'index.html')) {
+              a.classList.add('active');
+            } else {
+              a.classList.remove('active');
+            }
+          });
+        } catch (e) {
+          console.error('setActiveNavLinks failed', e);
+        }
+      }
+
+      // call once to initialize
+      setActiveNavLinks();
+
+      // Ensure header centering style applies after include
+      const header = document.querySelector('.site-header');
+      if (header) header.style.display = 'block';
+    }
+
+  // Navbars are inlined; attach handlers directly
+  attachNavbarHandlers();
 
   }); // DOMContentLoaded
 })();

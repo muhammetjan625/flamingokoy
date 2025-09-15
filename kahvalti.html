@@ -5,27 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kahvaltı - Flamingoköy</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="kahvalti.css">
 </head>
 <body class="kahvalti">
-  <header class="navbar">
-    <div class="logo">
-      <img src="images/logoflamingokoyb.png" alt="Flamingoköy Logo">
-      Flamingoköy
+  <!-- Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="main-navigation">
+        <ul class="menu">
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="kahvalti.html">Kahvaltı</a></li>
+          <li><a href="barbeku.html">Barbekü</a></li>
+          <li><a href="dostlarimiz.html">Dostlarımız</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+        <div class="menu-right"></div>
+      </nav>
+
+      <button class="hamburger-menu" aria-label="Menüyü aç" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="menu-mobile" aria-hidden="true">
+        <ul>
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="kahvalti.html">Kahvaltı</a></li>
+          <li><a href="barbeku.html">Barbekü</a></li>
+          <li><a href="dostlarimiz.html">Dostlarımız</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
     </div>
-    <ul class="menu">
-      <li><a href="index.html">Anasayfa</a></li>
-      <li><a href="hakkimizda.html">Hakkımızda</a></li>
-      <li><a href="kahvalti.html" class="active">Kahvaltı</a></li>
-      <li><a href="barbeku.html">Barbekü</a></li>
-      <li><a href="dostlarimiz.html">Dostlarımız</a></li>
-      <li><a href="iletisim.html">İletişim</a></li>
-    </ul>
   </header>
 
-  <div class="coming-soon">
-    <h1>Yakında!</h1>
-    <p>Bu sayfa çok yakında havalı bir şekilde hazırlanıyor. Takipte kalın! ✨</p>
-    <a href="index.html" class="home-btn">Anasayfa</a>
-  </div>
+  <main class="kahvalti-content">
+    <section class="intro">
+      <h1>Kahvaltı Keyfi</h1>
+      <p>Flamingoköy'ün doğal ortamında, taze ve organik ürünlerle hazırlanan kahvaltımız ile güne enerjik başlayın.</p>
+    </section>
+
+    <section class="menu-sample">
+      <h2>Öne Çıkan Lezzetler</h2>
+      <ul>
+        <li>Ev yapımı reçeller</li>
+        <li>Serpme peynir çeşitleri</li>
+        <li>Taze pişmiş simit ve poğaça</li>
+        <li>Menemen & sahanda yumurta</li>
+      </ul>
+    </section>
+
+    <section class="gallery">
+      <h2>Galeri</h2>
+      <div class="images">
+        <img src="images/hero1.jpg" alt="Kahvaltı 1">
+        <img src="images/hero2.jpg" alt="Kahvaltı 2">
+        <img src="images/hero1.jpg" alt="Kahvaltı 3">
+      </div>
+    </section>
+
+    <section class="booking">
+      <h2>Rezervasyon</h2>
+      <p>Grup rezervasyonları için lütfen bizi arayın: <a href="tel:+905321399161">+90 532 139 91 61</a></p>
+    </section>
+  </main>
+
+  <script>
+    // page-specific scripts removed; include loader from script.js handles navbar
+  </script>
 </body>
 </html>

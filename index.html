@@ -5,169 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flamingoköy</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      background: url('images/hero1.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-    header, section, footer {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-content, .about, .kahvalti, .barbeku, .dostlarimiz, .info-grid, .testimonials {
-      text-align: center;
-    }
-    .mini-gallery {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-    }
-    .mini-gallery img {
-      border-radius: 12px;
-      width: 120px;
-      height: 80px;
-      object-fit: cover;
-    }
-    .testimonial-list {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 24px;
-    }
-    .testimonial-card {
-      min-width: 180px;
-      max-width: 220px;
-    }
-    .info-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 32px;
-    }
-    .info-item {
-      flex: 1 1 320px;
-      max-width: 400px;
-    }
-    .call-button, .whatsapp-button {
-      position: fixed;
-      right: 32px;
-      bottom: 80px;
-      z-index: 10;
-    }
-    .call-button {
-      bottom: 140px;
-    }
-    #scrollTopBtn {
-      position: fixed;
-      right: 32px;
-      bottom: 32px;
-      z-index: 10;
-    }
-    /* FAQ Styles */
-    .faq {
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 12px;
-      padding: 24px;
-      margin: 32px 0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 90%;
-      max-width: 800px;
-    }
-    .faq h2 {
-      margin-bottom: 16px;
-    }
-    .faq ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    .faq li {
-      margin-bottom: 12px;
-      text-align: left;
-    }
-    .faq strong {
-      color: #333;
-    }
-    /* Navbar Styles */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 32px;
-      background-color: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 100;
-    }
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-      display: flex;
-      align-items: center;
-    }
-    .logo img {
-      height: 40px;
-      margin-right: 8px;
-    }
-    .menu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 24px;
-    }
-    .menu li {
-      position: relative;
-    }
-    .menu a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-    .menu a:hover {
-      background: rgba(62, 139, 39, 0.1);
-    }
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      .menu {
-        flex-direction: column;
-        gap: 16px;
-      }
-      .hero-content h1 {
-        font-size: 28px;
-      }
-      .hero-content p {
-        font-size: 16px;
-      }
-    }
-  </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">
-      <img src="images/logoflamingokoyb.png" alt="Flamingoköy Logo">
-      Flamingoköy
+  <!-- Navbar (inlined) -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="main-navigation">
+        <ul class="menu">
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="kahvalti.html">Kahvaltı</a></li>
+          <li><a href="barbeku.html">Barbekü</a></li>
+          <li><a href="dostlarimiz.html">Dostlarımız</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+        <div class="menu-right"></div>
+      </nav>
+
+      <button class="hamburger-menu" aria-label="Menüyü aç" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="menu-mobile" aria-hidden="true">
+        <ul>
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="kahvalti.html">Kahvaltı</a></li>
+          <li><a href="barbeku.html">Barbekü</a></li>
+          <li><a href="dostlarimiz.html">Dostlarımız</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
     </div>
-    <ul class="menu">
-      <li><a href="index.html">Anasayfa</a></li>
-      <li><a href="hakkimizda.html">Hakkımızda</a></li>
-      <li><a href="kahvalti.html">Kahvaltı</a></li>
-      <li><a href="barbeku.html">Barbekü</a></li>
-      <li><a href="dostlarimiz.html">Dostlarımız</a></li>
-      <li><a href="iletisim.html">İletişim</a></li>
-    </ul>
   </header>
 
   <!-- Hero -->
@@ -303,5 +174,13 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    function toggleSidebar() {
+      document.querySelector('.sidebar').classList.toggle('open');
+    }
+    document.querySelector('.logo').addEventListener('click', function() {
+      document.querySelector('.sidebar').classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
